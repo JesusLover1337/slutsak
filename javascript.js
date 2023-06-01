@@ -2,6 +2,7 @@ let searchText = document.getElementById("txtSearch");
 const menu = document.getElementById("menu-con");
 const searchbar = document.getElementById("searchbar");
 const login = document.getElementsByClassName("container");
+const aboutUs = document.getElementsByClassName("about-us");
 
 searchText.onkeydown = async function (event) {
   if (event.key === "Enter") {
@@ -77,14 +78,15 @@ function renderResults(results, searchTerm) {
 
 function ting(item) {
   if (item == 1) {
+    toggleSearchBar();
     removeJsDivs();
     showSearch.remove();
     showSearch.removeChild(showSearch.firstChild);
-    searchBar();
   } else if (item == 2) {
   } else if (item == 3) {
+    toggleAboutUs();
   } else if (item == 4) {
-    logIn();
+    toggleLogIn();
   }
 }
 
@@ -96,20 +98,32 @@ function toggleMenu() {
   }
 }
 
-function searchBar() {
+function toggleSearchBar() {
   if (searchbar.style.display === "none") {
     searchbar.style.display = "flex";
     login[0].style.display = "none";
+    aboutUs[0].style.display = "none";
   } else {
     searchbar.style.display = "none";
   }
 }
 
-function logIn() {
+function toggleLogIn() {
   if (login[0].style.display === "none") {
     login[0].style.display = "block";
     searchbar.style.display = "none";
+    aboutUs[0].style.display = "none";
   } else {
     login[0].style.display = "none";
+  }
+}
+
+function toggleAboutUs() {
+  if (aboutUs[0].style.display === "none") {
+    aboutUs[0].style.display = "block";
+    searchbar.style.display = "none";
+    login[0].style.display = "none";
+  } else {
+    aboutUs[0].style.display = "none";
   }
 }

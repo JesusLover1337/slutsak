@@ -177,30 +177,47 @@ input[type="submit"] {
   font-size: 35px;
   margin-right: 1%;
   background-color: transparent;
-
 }
 
+.about-us{
+  display: none;
+}
 
+.about-us-title{
+  text-align: center;
+}
 
+.about-us-text{
+  margin: auto;
+  text-align: center;
+  width: 80%;
+}
 
-
-
-
-
-
-@media screen and /* (min-width: 1200px) and */ (max-width: 600px){
+@media screen and (max-width: 600px){
   .site-title{
     font-size: 35px;
   }
-  /* .bottom-nav-item{
-    font-size: 4px;
-  } */
+   .bottom-nav-item{
+    font-size: 15px;
+  } 
+  .back-button{
+    font-size: 20px;
+  }
+  .show-search{
+    font-size: 20px;
+  }
 
 }
 
-@media screen and (max-width: 1200px ){
+@media screen and (min-width: 600px) and (max-width: 1200px ){
   .bottom-nav-item{
     font-size: 20px;
+  }
+  .back-button{
+    font-size: 25px;
+  }
+  .show-search{
+    font-size: 25px;
   }
 
 }
