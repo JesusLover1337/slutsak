@@ -195,8 +195,16 @@ input[type="submit"] {
   width: 80%;
 }
 .raiting{
-  background-color: black;
+  background-image: linear-gradient(90deg,#213d89,#2151b3,#1941c4);
+  text-align: center;
   color: white;
+  border-radius: 10px;
+  display:flex;
+  padding: 7px;
+  position: relative;
+  float:right;
+  bottom: 25px;
+  width: fit-content;
 }
 
 

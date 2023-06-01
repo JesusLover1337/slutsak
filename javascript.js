@@ -69,17 +69,7 @@ function renderResults(results, searchTerm) {
     moviePoster.style.height = "300px";
     myDiv.style.fontSize = "15px";
     myDiv.style.textAlign = "center";
-    myDiv2.style.backgroundImage =
-      "linear-gradient(90deg,#213d89,#2151b3,#1941c4)";
-    myDiv2.style.textAlign = "center";
-    myDiv2.style.color = "white";
-    myDiv2.style.borderRadius = "10px";
-    myDiv2.style.display = "flex";
-    myDiv2.style.padding = "7px";
-    myDiv2.style.position = "relative";
-    myDiv2.style.float = "right";
-    myDiv2.style.bottom = "25px";
-    myDiv2.style.width = "fit-content";
+    myDiv2.classList.add("raiting");
 
     myDiv2.appendChild(raiting);
     myDiv.appendChild(title);
