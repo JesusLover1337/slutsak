@@ -41,23 +41,38 @@ function renderResults(results, searchTerm) {
     console.log("loopar igenom objekten", object);
 
     const myDiv = document.createElement("div");
-    const myText = document.createTextNode(object.original_title);
+    const title = document.createTextNode(object.original_title);
+    const raiting = document.createTextNode(object.vote_average);
     const myImg = document.createElement("img");
 
     const baseUrl = "https://image.tmdb.org/t/p/";
     const posterSize = "w185";
     const posterPath = object.poster_path;
-    /*  if (posterPath === null) {
-      posterPath =
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg";
-    } */
     myImg.src = `${baseUrl}${posterSize}${posterPath}`;
-
+    if (posterPath === null) {
+      myImg.src =
+        "https://t3.ftcdn.net/jpg/04/62/93/66/360_F_462936689_BpEEcxfgMuYPfTaIAOC1tCDurmsno7Sp.jpg";
+    }
+    myImg.style.width = "180px";
+    myImg.style.height = "300px";
     myDiv.style.fontSize = "large";
     myDiv.style.textAlign = "center";
-    myDiv.appendChild(myText);
+    myDiv.appendChild(title);
     myDiv.appendChild(myImg);
     document.body.appendChild(myDiv).className = "con";
+  }
+}
+
+function ting(item) {
+  removeJsDivs();
+
+  if (item == 1) {
+    searchBar();
+  } else if (item == 2) {
+  } else if (item == 3) {
+  } else if (item == 4) {
+  } else if (item == 5) {
+    logIn();
   }
 }
 
@@ -72,6 +87,7 @@ function toggleMenu() {
 function searchBar() {
   if (searchbar.style.display === "none") {
     searchbar.style.display = "flex";
+    login[0].style.display = "none";
   } else {
     searchbar.style.display = "none";
   }
@@ -80,6 +96,7 @@ function searchBar() {
 function logIn() {
   if (login[0].style.display === "none") {
     login[0].style.display = "block";
+    searchbar.style.display = "none";
   } else {
     login[0].style.display = "none";
   }
