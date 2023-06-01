@@ -1,5 +1,6 @@
 body{
   margin:0px;
+  overflow: hidden;
 }
 
 .topnav{
@@ -26,12 +27,13 @@ body{
   
   
 }
-.searchbar{
+#searchbar{
   font-size: x-large;
   height:50px;
   width: 300px;
   position: relative;
-  display: flex;
+  display: none;
+  /* display: flex; */
   align-items: center;
   background-color: white;
   border-style: solid;
@@ -70,4 +72,35 @@ input{
   justify-content: center;
 
 }
+
+.humborgir{
+  background-color: transparent;
+  border: none;
+  font-size: x-large;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+}
+
+#menu-con{
+  position: absolute;
+   display: none; 
+  flex-direction: column;
+  background-color: lightgray;
+  padding: 5%;
+  height: 100%;
+  top:0px;
+  justify-content: center;
+}
+
+.menu-item{
+  display: inline-block;
+  padding-bottom: 60%;
+  background-color: transparent;
+  border: none;
+  font-size: x-large;
+  
+}
+
 

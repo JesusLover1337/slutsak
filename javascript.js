@@ -51,3 +51,31 @@ function renderResults(results) {
     document.body.appendChild(myDiv).className = "con";
   }
 }
+
+function toggleMenu() {
+  console.log("pressed");
+  const menu = document.getElementById("menu-con");
+  if (menu.style.display === "none") {
+    menu.style.display = "flex";
+  } else {
+    menu.style.display = "none";
+  }
+}
+
+function searchBar() {
+  const searchbar = document.getElementById("searchbar");
+  if (searchbar.style.display === "none") {
+    searchbar.style.display = "flex";
+  } else {
+    searchbar.style.display = "none";
+  }
+}
+
+function ting() {
+  const baseUrl = "https://image.tmdb.org/t/p/";
+  const popularity = "discover/movie?sort_by=popularity.desc";
+  let url = `${baseUrl}${popularity}`;
+  let response = fetch(url);
+  let json = response.json();
+  renderResults(json);
+}

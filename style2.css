@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    overflow: hidden;
 }
 
 .circle-wrapper {
@@ -32,8 +33,7 @@ body{
     transform: rotate(-90deg);
     transform-origin: center;
 }
- .title{
-     position: relative;     
+ .title{     
      text-align: center;
      color: white;
 } 
@@ -55,6 +55,7 @@ body{
     border-radius: 8px;
     gap: 30px;
     margin: 2rem auto;
+    overflow-y: hidden;
 }
 
 .item{
@@ -64,7 +65,7 @@ body{
     border-radius: 8px;
     scroll-snap-align: start;
     background-image: linear-gradient(90deg,#213d89,#2151b3,#1941c4);
-    transform-style: preserve-3d;
+     transform-style: preserve-3d; 
     transform-origin: center;
     transition: transform 1s;
     
@@ -85,10 +86,30 @@ body{
     backface-visibility: hidden; 
 }
 .back{
-    position: absolute;
     width: fit-content;
     height: fit-content;
     transform: rotateY(-180deg);
     backface-visibility: hidden; 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+    
 }
+
+.back .title{
+    position:relative;
+    top:-200px; 
+    display: inline-block;
+     
+}
+
+.back-text{ 
+    position:relative;
+    top:-200px; 
+    display: inline-block;
+    
+    
+}
+
+
 
