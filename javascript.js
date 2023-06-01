@@ -1,4 +1,7 @@
 let searchText = document.getElementById("txtSearch");
+const menu = document.getElementById("menu-con");
+const searchbar = document.getElementById("searchbar");
+const login = document.getElementsByClassName("container");
 
 searchText.onkeydown = async function (event) {
   if (event.key === "Enter") {
@@ -6,13 +9,12 @@ searchText.onkeydown = async function (event) {
     removeJsDivs();
     let searchTerm = searchText.value;
     let results = await search(searchTerm);
-    renderResults(results);
+    renderResults(results, searchTerm);
   }
 };
 
 function removeJsDivs() {
   const jsDivs = document.querySelectorAll(".con");
-  console.log(jsDivs);
   jsDivs.forEach((div) => div.remove());
 }
 
@@ -24,37 +26,42 @@ async function search(searchString) {
   return json;
 }
 
-function renderResults(results) {
+function renderResults(results, searchTerm) {
   let allObjects = [];
   allObjects = results.results;
-
+  searchbar.style.display = "none";
+  const searchInput = document.createTextNode(
+    `Results related to "${searchTerm}"`
+  );
+  const showSearch = document.createElement("div");
+  showSearch.appendChild(searchInput);
+  document.body.appendChild(showSearch).className = "show-search";
   for (let index = 0; index < allObjects.length; index++) {
     let object = allObjects[index];
-    console.log("loopar igenom objekten ", object);
+    console.log("loopar igenom objekten", object);
+
     const myDiv = document.createElement("div");
     const myText = document.createTextNode(object.original_title);
-    var a = document.createElement("a");
-    a.appendChild(myText);
-    a.title = "More information";
-    a.href = "index2.html";
     const myImg = document.createElement("img");
 
     const baseUrl = "https://image.tmdb.org/t/p/";
     const posterSize = "w185";
     const posterPath = object.poster_path;
+    /*  if (posterPath === null) {
+      posterPath =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg";
+    } */
     myImg.src = `${baseUrl}${posterSize}${posterPath}`;
 
     myDiv.style.fontSize = "large";
     myDiv.style.textAlign = "center";
-    myDiv.appendChild(a);
+    myDiv.appendChild(myText);
     myDiv.appendChild(myImg);
     document.body.appendChild(myDiv).className = "con";
   }
 }
 
 function toggleMenu() {
-  console.log("pressed");
-  const menu = document.getElementById("menu-con");
   if (menu.style.display === "none") {
     menu.style.display = "flex";
   } else {
@@ -63,7 +70,6 @@ function toggleMenu() {
 }
 
 function searchBar() {
-  const searchbar = document.getElementById("searchbar");
   if (searchbar.style.display === "none") {
     searchbar.style.display = "flex";
   } else {
@@ -71,11 +77,10 @@ function searchBar() {
   }
 }
 
-function ting() {
-  const baseUrl = "https://image.tmdb.org/t/p/";
-  const popularity = "discover/movie?sort_by=popularity.desc";
-  let url = `${baseUrl}${popularity}`;
-  let response = fetch(url);
-  let json = response.json();
-  renderResults(json);
+function logIn() {
+  if (login[0].style.display === "none") {
+    login[0].style.display = "block";
+  } else {
+    login[0].style.display = "none";
+  }
 }
