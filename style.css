@@ -1,6 +1,8 @@
 body{
   margin:0px;
   overflow-x: hidden;
+  font-family: "Oxygen", sans-serif;
+ /*  background-image: url(https://static9.depositphotos.com/1000111/1137/i/600/depositphotos_11371387-stock-photo-paper-texture.jpg); */
 }
 
 .topnav{
@@ -22,10 +24,6 @@ body{
   text-decoration: underline;
   padding: 120px;
   margin: auto; 
-
-  
-  
-  
 }
 #searchbar{
   font-size: x-large;
@@ -145,4 +143,54 @@ input[type="submit"] {
 .show-search{
   padding-left: 1%;
   font-size: 35px;
+}
+
+.bottom-nav{
+  background-image: linear-gradient(90deg,#213d89,#2151b3,#1941c4);
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.p1{
+  display: inline-block;
+  padding-left: 5px;
+}
+
+.bottom-nav-item{
+  font-size: 25px;
+  transition: font-size 0.3s ease;
+}
+
+.bottom-nav-item:hover {
+  font-size: 1.2em;
+}
+
+
+
+
+
+
+
+
+
+@media screen and /* (min-width: 1200px) and */ (max-width: 600px){
+  .site-title{
+    font-size: 35px;
+  }
+  /* .bottom-nav-item{
+    font-size: 4px;
+  } */
+
+}
+
+@media screen and (max-width: 1200px ){
+  .bottom-nav-item{
+    font-size: 20px;
+  }
+
 }

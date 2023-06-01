@@ -71,7 +71,6 @@ function ting(item) {
   } else if (item == 2) {
   } else if (item == 3) {
   } else if (item == 4) {
-  } else if (item == 5) {
     logIn();
   }
 }
