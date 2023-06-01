@@ -170,6 +170,16 @@ input[type="submit"] {
   font-size: 1.2em;
 }
 
+.back-button{
+  position: absolute; 
+  right:0;
+  border: none;
+  font-size: 35px;
+  margin-right: 1%;
+  background-color: transparent;
+
+}
+
 
 
 

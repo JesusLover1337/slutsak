@@ -25,7 +25,8 @@ async function search(searchString) {
   let json = await response.json();
   return json;
 }
-
+const showSearch = document.createElement("div");
+const backToSearchButton = document.createElement("button");
 function renderResults(results, searchTerm) {
   let allObjects = [];
   allObjects = results.results;
@@ -33,12 +34,23 @@ function renderResults(results, searchTerm) {
   const searchInput = document.createTextNode(
     `Results related to "${searchTerm}"`
   );
-  const showSearch = document.createElement("div");
   showSearch.appendChild(searchInput);
+  backToSearchButton.innerText = "Back to Search";
+  backToSearchButton.addEventListener("click", function () {
+    removeJsDivs();
+    showSearch.remove();
+    showSearch.removeChild(showSearch.firstChild);
+    searchbar.style.display = "flex";
+    backToSearchButton.remove();
+    backToSearchButton.removeChild(backToSearchButton.firstElementChild);
+  });
+
+  document.body.appendChild(backToSearchButton).className = "back-button";
   document.body.appendChild(showSearch).className = "show-search";
+
   for (let index = 0; index < allObjects.length; index++) {
     let object = allObjects[index];
-    console.log("loopar igenom objekten", object);
+    /* console.log("loopar igenom objekten", object); */
 
     const myDiv = document.createElement("div");
     const title = document.createTextNode(object.original_title);
@@ -55,7 +67,7 @@ function renderResults(results, searchTerm) {
     }
     myImg.style.width = "180px";
     myImg.style.height = "300px";
-    myDiv.style.fontSize = "large";
+    myDiv.style.fontSize = "15px";
     myDiv.style.textAlign = "center";
     myDiv.appendChild(title);
     myDiv.appendChild(myImg);
@@ -64,9 +76,10 @@ function renderResults(results, searchTerm) {
 }
 
 function ting(item) {
-  removeJsDivs();
-
   if (item == 1) {
+    removeJsDivs();
+    showSearch.remove();
+    showSearch.removeChild(showSearch.firstChild);
     searchBar();
   } else if (item == 2) {
   } else if (item == 3) {
