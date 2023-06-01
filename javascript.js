@@ -51,27 +51,40 @@ function renderResults(results, searchTerm) {
 
   for (let index = 0; index < allObjects.length; index++) {
     let object = allObjects[index];
-    /* console.log("loopar igenom objekten", object); */
-
     const myDiv = document.createElement("div");
+    const myDiv2 = document.createElement("div");
     const title = document.createTextNode(object.original_title);
-    const raiting = document.createTextNode(object.vote_average);
-    const myImg = document.createElement("img");
+    const raiting = document.createTextNode(object.vote_average.toFixed(1));
+    const moviePoster = document.createElement("img");
 
     const baseUrl = "https://image.tmdb.org/t/p/";
     const posterSize = "w185";
     const posterPath = object.poster_path;
-    myImg.src = `${baseUrl}${posterSize}${posterPath}`;
+    moviePoster.src = `${baseUrl}${posterSize}${posterPath}`;
     if (posterPath === null) {
-      myImg.src =
+      moviePoster.src =
         "https://t3.ftcdn.net/jpg/04/62/93/66/360_F_462936689_BpEEcxfgMuYPfTaIAOC1tCDurmsno7Sp.jpg";
     }
-    myImg.style.width = "180px";
-    myImg.style.height = "300px";
+    moviePoster.style.width = "180px";
+    moviePoster.style.height = "300px";
     myDiv.style.fontSize = "15px";
     myDiv.style.textAlign = "center";
+    myDiv2.style.backgroundImage =
+      "linear-gradient(90deg,#213d89,#2151b3,#1941c4)";
+    myDiv2.style.textAlign = "center";
+    myDiv2.style.color = "white";
+    myDiv2.style.borderRadius = "10px";
+    myDiv2.style.display = "flex";
+    myDiv2.style.padding = "7px";
+    myDiv2.style.position = "relative";
+    myDiv2.style.float = "right";
+    myDiv2.style.bottom = "25px";
+    myDiv2.style.width = "fit-content";
+
+    myDiv2.appendChild(raiting);
     myDiv.appendChild(title);
-    myDiv.appendChild(myImg);
+    myDiv.appendChild(moviePoster);
+    myDiv.appendChild(myDiv2);
     document.body.appendChild(myDiv).className = "con";
   }
 }

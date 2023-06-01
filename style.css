@@ -2,8 +2,9 @@ body{
   margin:0px;
   overflow-x: hidden;
   font-family: "Oxygen", sans-serif;
- /*  background-image: url(https://static9.depositphotos.com/1000111/1137/i/600/depositphotos_11371387-stock-photo-paper-texture.jpg); */
-}
+   background-image: url(https://static9.depositphotos.com/1000111/1137/i/600/depositphotos_11371387-stock-photo-paper-texture.jpg);
+margin-bottom: 150px;
+  }
 
 .topnav{
   display: flex;
@@ -22,7 +23,7 @@ body{
   color: transparent;
   font-size: 50px;
   text-decoration: underline;
-  padding: 120px;
+  padding: 90px;
   margin: auto; 
 }
 #searchbar{
@@ -58,7 +59,7 @@ input{
  display: inline-block;
  width: 185px;
  margin: 20px;
- padding: 20px;
+ padding: 10px;
  margin-bottom: 30px;
  background-color: gray;
  border-radius: 10px;
@@ -70,7 +71,7 @@ input{
 
 }
 
-.humborgir{
+.menu{
   background-color: transparent;
   border: none;
   font-size: x-large;
@@ -154,6 +155,7 @@ input[type="submit"] {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 1;
 }
 
 .p1{
@@ -167,7 +169,7 @@ input[type="submit"] {
 }
 
 .bottom-nav-item:hover {
-  font-size: 1.2em;
+  font-size: 1.75em;
 }
 
 .back-button{
@@ -192,6 +194,11 @@ input[type="submit"] {
   text-align: center;
   width: 80%;
 }
+.raiting{
+  background-color: black;
+  color: white;
+}
+
 
 @media screen and (max-width: 600px){
   .site-title{
