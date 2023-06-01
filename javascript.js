@@ -96,9 +96,8 @@ function ting(item) {
     showSearch.remove();
     showSearch.removeChild(showSearch.firstChild);
   } else if (item == 2) {
-  } else if (item == 3) {
     toggleAboutUs();
-  } else if (item == 4) {
+  } else if (item == 3) {
     toggleLogIn();
   }
 }
